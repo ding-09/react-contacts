@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-contacts/static/css/main.2511ee11.chunk.css",
+    "main.js": "/react-contacts/static/js/main.5caeec3b.chunk.js",
+    "main.js.map": "/react-contacts/static/js/main.5caeec3b.chunk.js.map",
+    "runtime-main.js": "/react-contacts/static/js/runtime-main.85fcf260.js",
+    "runtime-main.js.map": "/react-contacts/static/js/runtime-main.85fcf260.js.map",
+    "static/js/2.89c7b1de.chunk.js": "/react-contacts/static/js/2.89c7b1de.chunk.js",
+    "static/js/2.89c7b1de.chunk.js.map": "/react-contacts/static/js/2.89c7b1de.chunk.js.map",
+    "static/js/3.e65a2ce2.chunk.js": "/react-contacts/static/js/3.e65a2ce2.chunk.js",
+    "static/js/3.e65a2ce2.chunk.js.map": "/react-contacts/static/js/3.e65a2ce2.chunk.js.map",
+    "index.html": "/react-contacts/index.html",
+    "static/css/main.2511ee11.chunk.css.map": "/react-contacts/static/css/main.2511ee11.chunk.css.map",
+    "static/js/2.89c7b1de.chunk.js.LICENSE.txt": "/react-contacts/static/js/2.89c7b1de.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.85fcf260.js",
+    "static/js/2.89c7b1de.chunk.js",
+    "static/css/main.2511ee11.chunk.css",
+    "static/js/main.5caeec3b.chunk.js"
+  ]
+}
