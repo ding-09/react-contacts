@@ -4,14 +4,16 @@ export const Container = styled.article`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 85%;
+  max-width: 50%;
+  min-width: 500px;
+  width: 100%;
   padding: 10px;
-  box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.5);
-  margin-bottom: 10px;
+  box-shadow: 0px 5px 5px -1px rgba(0, 0, 0, 0.3);
+  background-color: #fafafa;
 `;
 
 export const Figure = styled.figure`
-  max-width: 140px;
+  max-width: 130px;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0 15px;
   img {
