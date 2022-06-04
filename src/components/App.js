@@ -61,6 +61,9 @@ class App extends React.Component {
     //   contacts: storedContacts.length ? storedContacts : mockContacts
     // })
 
+    // modified this to just grab data from mockContacts array 
+    // and set the state
+
     this.setState({
       contacts: mockContacts,
     });
@@ -69,6 +72,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        {/* COMMENT OUT EVERYTHING EXCEPT ContactsPage */}
+        {/* since that is the only component we need right out */}
+
         {/* <LoginPage /> */}
         {/* <RegisterPage /> */}
         <ContactsPage contacts={this.state.contacts} />

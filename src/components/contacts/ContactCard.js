@@ -1,3 +1,5 @@
+// importing styled components from newly created
+// ContactList.styled.js 
 import { Container, Figure, ContactInfo, Button } from './ContactCard.styled';
 
 const ContactCard = ({
