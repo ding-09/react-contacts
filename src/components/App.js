@@ -1,10 +1,10 @@
-import React from 'react';
-// import LoginPage from "./login"
-// import RegisterPage from "./register";
+import React, { useState, useEffect } from 'react';
+import LoginPage from './login';
+import RegisterPage from './register';
 import ContactsPage from './contacts';
-// import ContactDetailsPage from './contact-details';
-// import ContactCreatePage from "./contact-create";
-// import { getContacts } from "../utils/contacts";
+import ContactDetailsPage from './contact-details';
+import ContactCreatePage from './contact-create';
+import { getContacts } from '../utils/contacts';
 
 const mockContacts = [
   {
@@ -45,44 +45,28 @@ const mockContacts = [
   },
 ];
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+const App = () => {
+  const [contacts, setContacts] = useState([]);
 
-    this.state = {
-      contacts: [],
-    };
-  }
-
-  componentDidMount() {
+  useEffect(() => {
     // const storedContacts = getContacts();
 
     // this.setState({
     //   contacts: storedContacts.length ? storedContacts : mockContacts
     // })
 
-    // modified this to just grab data from mockContacts array 
-    // and set the state
+    setContacts(mockContacts);
+  }, []);
 
-    this.setState({
-      contacts: mockContacts,
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        {/* COMMENT OUT EVERYTHING EXCEPT ContactsPage */}
-        {/* since that is the only component we need right out */}
-
-        {/* <LoginPage /> */}
-        {/* <RegisterPage /> */}
-        <ContactsPage contacts={this.state.contacts} />
-        {/* <ContactDetailsPage contact={this.state.contacts[0]} /> */}
-        {/* <ContactCreatePage /> */}
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <LoginPage />
+      <RegisterPage />
+      <ContactsPage contacts={contacts} />
+      <ContactDetailsPage contact={contacts[0]} />
+      <ContactCreatePage />
+    </div>
+  );
+};
 
 export default App;

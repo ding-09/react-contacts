@@ -1,61 +1,62 @@
 import React from 'react';
+import { useForm } from '../../hooks/useForm';
 
-class RegisterForm extends React.Component {
+const RegisterForm = (props) => {
+  // initialize state with username and password fields
+  //   const [formValues, setFormValues] = useState({
+  //     username: '',
+  //     password: '',
+  //   });
 
-    constructor(props) {
-        super(props);
+  //   const handleInputChange = (event) => {
+  //     // setFormValues based on name of input
+  //     setFormValues({ ...formValues, [event.target.name]: event.target.value });
+  //   };
 
-        this.state = {
-            username: '',
-            password: '',
-        }
+  // *************************************
+  // realized the exact same logi was being applied to
+  // both LoginForm.js and RegisterForm.js, so
+  // used custom hook useForm to handle form input
+  // to reduce repetition
 
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    }
+  const [formValues, handleInputChange] = useForm({
+    username: '',
+    password: '',
+  });
 
-    handleInputChange(event) {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    }
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+  };
 
-    handleFormSubmit(event) {
-        event.preventDefault();
-        
-    }
-
-    render() {
-        return (
-            <form onSubmit={this.handleFormSubmit}>
-                <div>
-                    <label htmlFor="username">Username</label>
-                    <input 
-                        id="username"
-                        name="username"
-                        type="text" 
-                        placeholder="Username"  
-                        value={this.state.username}
-                        onChange={this.handleInputChange}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="password">Password</label>
-                    <input 
-                        id="password"
-                        name="password"
-                        type="password" 
-                        placeholder="Password"
-                        value={this.state.password}
-                        onChange={this.handleInputChange}
-                    />
-                </div>
-                <div>
-                    <button type="submit">Login</button>
-                </div>
-            </form>
-        )
-    }
-}
+  return (
+    <form onSubmit={handleFormSubmit}>
+      <div>
+        <label htmlFor='username'>Username</label>
+        <input
+          id='username'
+          name='username'
+          type='text'
+          placeholder='Username'
+          value={formValues.username}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div>
+        <label htmlFor='password'>Password</label>
+        <input
+          id='password'
+          name='password'
+          type='password'
+          placeholder='Password'
+          value={formValues.password}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div>
+        <button type='submit'>Register</button>
+      </div>
+    </form>
+  );
+};
 
 export default RegisterForm;
