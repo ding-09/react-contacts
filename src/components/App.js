@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import LoginPage from './login';
 import RegisterPage from './register';
 import ContactsPage from './contacts';
@@ -16,10 +16,10 @@ const App = () => {
 
   return (
     <div>
-      <LoginPage />
-      <RegisterPage />
-      <ContactsPage contacts={contacts} />
-      <ContactDetailsPage contact={contacts[0]} />
+      {/* <LoginPage /> */}
+      {/* <RegisterPage /> */}
+      {/* <ContactsPage contacts={contacts} /> */}
+      {/* <ContactDetailsPage contact={contacts[0]} /> */}
       <ContactCreatePage />
     </div>
   );

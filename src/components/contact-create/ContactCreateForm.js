@@ -1,6 +1,9 @@
 import React from 'react';
 import { useForm } from '../../hooks/useForm';
 
+// styles
+import { Form, Figure, InputContainer, InputGroup, SubmitBtn } from './ContactCreatForm.styled';
+
 const ContactCreateForm = (props) => {
   const [formValues, handleInputChange] = useForm({
     firstName: '',
@@ -16,12 +19,12 @@ const ContactCreateForm = (props) => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
-      <div>
+    <Form onSubmit={handleFormSubmit}>
+      <Figure>
         <img src={formValues.profilePic} alt='Profile preview.' />
-      </div>
-      <div>
-        <div>
+      </Figure>
+      <InputContainer>
+        <InputGroup>
           <input
             type='text'
             placeholder='First Name'
@@ -29,8 +32,8 @@ const ContactCreateForm = (props) => {
             value={formValues.firstName}
             onChange={handleInputChange}
           />
-        </div>
-        <div>
+        </InputGroup>
+        <InputGroup>
           <input
             type='text'
             placeholder='Last Name'
@@ -38,8 +41,8 @@ const ContactCreateForm = (props) => {
             value={formValues.lastName}
             onChange={handleInputChange}
           />
-        </div>
-        <div>
+        </InputGroup>
+        <InputGroup>
           <input
             type='tel'
             placeholder='Phone Number'
@@ -47,8 +50,8 @@ const ContactCreateForm = (props) => {
             value={formValues.phoneNumber}
             onChange={handleInputChange}
           />
-        </div>
-        <div>
+        </InputGroup>
+        <InputGroup>
           <input
             type='email'
             placeholder='Email'
@@ -56,8 +59,8 @@ const ContactCreateForm = (props) => {
             value={formValues.email}
             onChange={handleInputChange}
           />
-        </div>
-        <div>
+        </InputGroup>
+        <InputGroup>
           <input
             type='text'
             placeholder='Address'
@@ -65,8 +68,8 @@ const ContactCreateForm = (props) => {
             value={formValues.address}
             onChange={handleInputChange}
           />
-        </div>
-        <div>
+        </InputGroup>
+        <InputGroup>
           <input
             type='text'
             placeholder='Profile Picture Url'
@@ -74,12 +77,12 @@ const ContactCreateForm = (props) => {
             value={formValues.profilePic}
             onChange={handleInputChange}
           />
-        </div>
+        </InputGroup>
         <div>
-          <button type='submit'>Add Contact</button>
+          <SubmitBtn type='submit'>Add Contact</SubmitBtn>
         </div>
-      </div>
-    </form>
+      </InputContainer>
+    </Form>
   );
 };
 
