@@ -2,7 +2,13 @@ import React from 'react';
 import { useForm } from '../../hooks/useForm';
 
 // styles
-import { Form, Figure, InputContainer, InputGroup, SubmitBtn } from './ContactCreatForm.styled';
+import {
+  Form,
+  Figure,
+  InputContainer,
+  InputGroup,
+  SubmitBtn,
+} from './ContactCreatForm.styled';
 
 const ContactCreateForm = (props) => {
   const [formValues, handleInputChange] = useForm({
@@ -21,7 +27,13 @@ const ContactCreateForm = (props) => {
   return (
     <Form onSubmit={handleFormSubmit}>
       <Figure>
-        <img src={formValues.profilePic} alt='Profile preview.' />
+        <img
+          src={
+            formValues.profilePic ||
+            'https://media.istockphoto.com/vectors/simple-man-head-icon-set-vector-id1196083861?k=20&m=1196083861&s=612x612&w=0&h=XNRxC4ohwTlL7KBis1Dc_MZASQSKfC9IoBfe2Oq9eL0='
+          }
+          alt='Profile preview.'
+        />
       </Figure>
       <InputContainer>
         <InputGroup>

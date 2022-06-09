@@ -6,6 +6,7 @@ export const Form = styled.form`
   gap: 2.5rem;
   padding: 3rem;
   margin-top: 5rem;
+  background-color: #f0f0f0;
 `;
 
 export const Figure = styled.figure`
@@ -26,6 +27,10 @@ export const InputContainer = styled.section`
     border: none;
     padding: 0.5rem 1.5rem;
     font-size: 1.4rem;
+    background-color: #f0f0f0;
+    &::placeholder {
+      color: #696969;
+    }
   }
 `;
 
@@ -37,4 +42,8 @@ export const SubmitBtn = styled.button`
   padding: 0.8rem 1.5rem;
   text-transform: uppercase;
   cursor: pointer;
+  border: 1px solid #696969;
+  &:hover {
+    background-color: #c0c0c0;
+  }
 `;

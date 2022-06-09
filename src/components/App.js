@@ -18,7 +18,7 @@ const App = () => {
     <div>
       {/* <LoginPage /> */}
       {/* <RegisterPage /> */}
-      {/* <ContactsPage contacts={contacts} /> */}
+      <ContactsPage contacts={contacts} />
       {/* <ContactDetailsPage contact={contacts[0]} /> */}
       <ContactCreatePage />
     </div>
