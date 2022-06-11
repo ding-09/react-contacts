@@ -1,13 +1,12 @@
 // importing styled components from newly created
-// ContactList.styled.js 
+// ContactList.styled.js
 import { Container, Figure, ContactInfo, Button } from './ContactCard.styled';
 
-const ContactCard = ({
-  firstName = '',
-  lastName = '',
-  phoneNumber = '',
-  profilePic = '',
-}) => {
+// import useContacts
+import { useContacts } from '../../providers/ContactsProvider';
+
+const ContactCard = ({ firstName, lastName, phoneNumber, profilePic, id }) => {
+  const contactsContext = useContacts();
   return (
     <Container>
       <Figure>
@@ -19,7 +18,7 @@ const ContactCard = ({
         </h2>
         <p>{phoneNumber}</p>
       </ContactInfo>
-      <Button>X</Button>
+      <Button onClick={() => contactsContext.deleteContact(id)}>X</Button>
     </Container>
   );
 };

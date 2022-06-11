@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from '../../hooks/useForm';
+import { useContacts } from '../../providers/ContactsProvider'
 
 // styles
 import {
@@ -11,6 +12,8 @@ import {
 } from './ContactCreatForm.styled';
 
 const ContactCreateForm = (props) => {
+  const contactsContext = useContacts();
+
   const [formValues, handleInputChange] = useForm({
     firstName: '',
     lastName: '',
@@ -22,6 +25,9 @@ const ContactCreateForm = (props) => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+
+    // add formValues to current contacts via context
+    contactsContext.addContact(formValues)
   };
 
   return (

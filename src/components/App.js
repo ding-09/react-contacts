@@ -4,24 +4,24 @@ import RegisterPage from './register';
 import ContactsPage from './contacts';
 import ContactDetailsPage from './contact-details';
 import ContactCreatePage from './contact-create';
-import { getContacts } from '../utils/contacts';
-import { useFetchContacts } from '../hooks/useFetchContacts'
+import { ContactsProvider } from '../providers/ContactsProvider'
 
 
 
 const App = () => {
   // const [contacts, setContacts] = useState([]);
 
-  const [contacts] = useFetchContacts();
+  // const [contacts, setContacts] = useFetchContacts();
+  
 
   return (
-    <div>
-      {/* <LoginPage /> */}
-      {/* <RegisterPage /> */}
-      <ContactsPage contacts={contacts} />
-      {/* <ContactDetailsPage contact={contacts[0]} /> */}
-      <ContactCreatePage />
-    </div>
+    <ContactsProvider>
+      <LoginPage />
+      <RegisterPage />
+      <ContactsPage />
+      <ContactDetailsPage />
+      <ContactCreatePage/>
+    </ContactsProvider>
   );
 };
 

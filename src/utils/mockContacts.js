@@ -7,6 +7,8 @@ export const mockContacts = [
     phoneNumber: '(351) 346-6140',
     email: 'csnelman0@blog.com',
     address: '09 Eggendart Parkway',
+    // added refUser to associate a contact with a particular user
+    refUserId: 1
   },
   {
     id: 2,
@@ -16,6 +18,7 @@ export const mockContacts = [
     phoneNumber: '(676) 783-9239',
     email: 'tallcorn1@senate.gov',
     address: '78145 Brentwood Court',
+    refUserId: 2
   },
   {
     id: 3,

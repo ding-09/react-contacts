@@ -9,17 +9,12 @@ export const useFetchContacts = () => {
   // on component mount / page render,
   // setContacts with mockContacts derived from utils
   useEffect(() => {
-    // get contacts from localStorage
-    const storedContacts = getContacts();
-
-    // merge mockContacts and storedContacts
-    // into one state
-    setContacts([...mockContacts, ...storedContacts]);
-
+    setContacts(mockContacts);
   }, []);
 
   // return contacts from this custom hook
   // holds information from
-  // mockContacts and storedContacts combined
-  return [contacts];
+  // mockContacts
+
+  return [contacts, setContacts];
 };

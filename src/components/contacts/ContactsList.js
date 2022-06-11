@@ -1,15 +1,18 @@
 import ContactCard from './ContactCard';
+import { useContacts } from '../../providers/ContactsProvider'
 
 // importing styled component from newly created
 // ContactList.styled.js 
 import { Container } from './ContactList.styled';
 
-const ContactList = ({ contacts = [] }) => {
+const ContactList = () => {
+  const contactsContext = useContacts()
   return (
     <Container>
-      {contacts.map((contact) => (
+      {contactsContext.contacts.map((contact) => (
         <ContactCard
           key={contact.id}
+          id={contact.id}
           firstName={contact.firstName}
           lastName={contact.lastName}
           phoneNumber={contact.phoneNumber}
