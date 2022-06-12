@@ -4,24 +4,24 @@ import RegisterPage from './register';
 import ContactsPage from './contacts';
 import ContactDetailsPage from './contact-details';
 import ContactCreatePage from './contact-create';
-import { ContactsProvider } from '../providers/ContactsProvider'
-
-
+import { ContactsProvider } from '../providers/ContactsProvider';
+import { AuthProvider, useAuth } from '../providers/AuthProvider';
 
 const App = () => {
   // const [contacts, setContacts] = useState([]);
 
   // const [contacts, setContacts] = useFetchContacts();
   
-
   return (
-    <ContactsProvider>
+    <AuthProvider>
       <LoginPage />
       <RegisterPage />
-      <ContactsPage />
-      <ContactDetailsPage />
-      <ContactCreatePage/>
-    </ContactsProvider>
+      <ContactsProvider>
+        <ContactsPage />
+        <ContactDetailsPage />
+        <ContactCreatePage />
+      </ContactsProvider>
+    </AuthProvider>
   );
 };
 
