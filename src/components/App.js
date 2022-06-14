@@ -21,7 +21,7 @@ const App = () => {
       {authContext.loggedIn && (
         <ContactsProvider>
           <ContactsPage />
-          <ContactDetailsPage />
+          {/* <ContactDetailsPage /> */}
           <ContactCreatePage />
         </ContactsProvider>
       )}

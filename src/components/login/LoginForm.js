@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from '../../hooks/useForm';
+import { useAuth } from '../../providers/AuthProvider';
 
 const LoginForm = (props) => {
   // initialize state with username and password fields
@@ -14,10 +15,11 @@ const LoginForm = (props) => {
   // };
 
   // *************************************
-  // realized the exact same logi was being applied to 
-  // both LoginForm.js and RegisterForm.js, so 
-  // used custom hook useForm to handle form input 
-  // to reduce repetition 
+  // realized the exact same logic was being applied to
+  // both LoginForm.js and RegisterForm.js, so
+  // used custom hook useForm to handle form input
+  // to reduce repetition
+  const authContext = useAuth();
 
   const [formValues, handleInputChange] = useForm({
     username: '',
@@ -26,6 +28,7 @@ const LoginForm = (props) => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    authContext.login(formValues.username, formValues.password);
   };
 
   return (

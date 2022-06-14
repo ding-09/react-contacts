@@ -1,4 +1,5 @@
 import React, { useState, createContext, useContext } from 'react';
+import { mockUsers } from '../utils/mockUsers'
 
 // create Auth context
 const AuthContext = createContext();
@@ -10,10 +11,12 @@ export const AuthProvider = (props) => {
   // login a user
   // accept username and password as parameters
   const login = (username, password) => {
-    // check if username and password are correct
-    // if validated, set username as loggedIn user
-    // setLoggedIn(username)
-    // if no match, throw error
+    // validate user against "database"
+    mockUsers.forEach((mockUser) => {
+      if (username === mockUser.username && password === mockUser.password) {
+        setLoggedIn(true);
+      }
+    });
   };
 
   const logout = () => {
