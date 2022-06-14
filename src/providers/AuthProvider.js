@@ -21,7 +21,7 @@ export const AuthProvider = (props) => {
 
   const logout = () => {
     // set logged in user to null
-    // setLoggedIn(null)
+    setLoggedIn(null);
   };
 
   const value = { loggedIn, login, logout };

@@ -9,3 +9,8 @@ export const Container = styled.section`
   min-height: 100vh;
   padding-top: 50px;
 `;
+
+export const LogoutButton = styled.button`
+  padding: 1rem 3rem;
+  font-size: 1.8rem;
+`
