@@ -28,7 +28,13 @@ const LoginForm = (props) => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+
+    // login user from authContext
     authContext.login(formValues.username, formValues.password);
+
+    // reset form values
+    formValues.username = '';
+    formValues.password = '';
   };
 
   return (

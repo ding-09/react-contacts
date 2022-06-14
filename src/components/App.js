@@ -16,8 +16,8 @@ const App = () => {
 
   return (
     <>
-      <LoginPage />
-      <RegisterPage />
+      {authContext.loggedIn ?? <LoginPage />}
+      {/* <RegisterPage /> */}
       {authContext.loggedIn && (
         <ContactsProvider>
           <ContactsPage />
